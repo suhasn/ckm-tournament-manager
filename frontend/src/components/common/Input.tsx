@@ -9,19 +9,20 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, helperText, className = '', ...props }, ref) => {
     return (
-      <div className="w-full">
+      <div className="w-full form-group">
         {label && (
-          <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
+          <label className="form-label">
             {label}
+            {props.required && <span className="text-[#f56d2f] ml-1">*</span>}
           </label>
         )}
         <input
           ref={ref}
-          className={`input ${error ? 'border-red-500 focus:ring-red-500' : ''} ${className}`}
+          className={`input ${error ? 'input-error' : ''} ${className}`}
           {...props}
         />
-        {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
-        {helperText && !error && <p className="mt-1 text-sm text-slate-500">{helperText}</p>}
+        {error && <p className="form-error">{error}</p>}
+        {helperText && !error && <p className="text-sm text-slate-500">{helperText}</p>}
       </div>
     )
   }

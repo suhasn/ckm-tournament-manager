@@ -2,10 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Chess Klub Theme */
+:root {
+  --ck-primary: #1e293b; /* Deep Black */
+  --ck-secondary: #f56d2f; /* Orange */
+  --ck-accent: #ffffff; /* White */
+  --ck-dark: #0f172a; /* Darker Black */
+  --ck-light: #fef3e6; /* Light Orange */
+}
+
 * {
   @apply transition-colors duration-200;
 }
 
 body {
   @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f56d2f;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e85b1f;
 }

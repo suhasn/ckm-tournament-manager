@@ -1,29 +1,167 @@
 @layer components {
+  /* Buttons - Chess Klub Theme */
   .btn {
     @apply px-4 py-2 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all;
   }
 
   .btn-primary {
-    @apply btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+    @apply btn bg-[#f56d2f] text-white hover:bg-[#e85b1f] focus:ring-[#f56d2f] shadow-md hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply btn bg-slate-200 text-slate-900 hover:bg-slate-300 focus:ring-slate-400;
+    @apply btn bg-[#1e293b] text-white hover:bg-[#0f172a] focus:ring-[#1e293b] shadow-md hover:shadow-lg;
   }
 
   .btn-danger {
     @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
   }
 
+  .btn-ghost {
+    @apply btn bg-transparent text-[#f56d2f] hover:bg-[#fef3e6] border border-[#f56d2f];
+  }
+
+  .btn-outlined {
+    @apply btn border-2 border-[#1e293b] text-[#1e293b] hover:bg-[#1e293b] hover:text-white;
+  }
+
+  /* Cards */
   .card {
-    @apply bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm;
+    @apply bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow;
   }
 
+  .card-accent {
+    @apply card border-l-4 border-l-[#f56d2f];
+  }
+
+  /* Inputs */
   .input {
-    @apply w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    @apply w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-50 focus:ring-2 focus:ring-[#f56d2f] focus:border-transparent;
   }
 
-  .table-row {
-    @apply border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800;
+  .input-error {
+    @apply input border-red-500 focus:ring-red-500;
   }
+
+  /* Tables */
+  .table-row {
+    @apply border-b border-slate-200 dark:border-slate-700 hover:bg-[#fef3e6] dark:hover:bg-slate-800 transition-colors;
+  }
+
+  .table-header {
+    @apply bg-[#1e293b] text-white font-semibold;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-block px-3 py-1 text-xs font-semibold rounded-full;
+  }
+
+  .badge-primary {
+    @apply badge bg-[#f56d2f] text-white;
+  }
+
+  .badge-secondary {
+    @apply badge bg-[#1e293b] text-white;
+  }
+
+  .badge-success {
+    @apply badge bg-green-200 text-green-800;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-200 text-yellow-800;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-200 text-red-800;
+  }
+
+  /* Status indicators */
+  .status-active {
+    @apply inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium;
+  }
+
+  .status-inactive {
+    @apply inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium;
+  }
+
+  .status-pending {
+    @apply inline-flex items-center gap-2 px-3 py-1 bg-[#fef3e6] text-[#f56d2f] rounded-full text-sm font-medium;
+  }
+
+  /* Sections */
+  .section-title {
+    @apply text-3xl font-bold text-[#1e293b] dark:text-white mb-6;
+  }
+
+  .section-subtitle {
+    @apply text-lg font-semibold text-[#1e293b] dark:text-white mb-4;
+  }
+
+  /* Dividers */
+  .divider-orange {
+    @apply h-1 bg-[#f56d2f] rounded-full;
+  }
+
+  /* Links */
+  .link-primary {
+    @apply text-[#f56d2f] hover:text-[#e85b1f] underline cursor-pointer transition-colors;
+  }
+
+  /* Forms */
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-[#1e293b] dark:text-slate-300;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 dark:text-red-400 mt-1;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply flex items-center gap-3 px-6 py-3 text-sm font-medium transition-all;
+  }
+
+  .nav-link-active {
+    @apply nav-link bg-[#f56d2f] text-white;
+  }
+
+  .nav-link-inactive {
+    @apply nav-link text-slate-700 dark:text-slate-300 hover:bg-[#fef3e6] dark:hover:bg-slate-800 hover:text-[#f56d2f];
+  }
+}
+
+/* Animations */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
 }
